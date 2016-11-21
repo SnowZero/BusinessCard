@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    ServerCommunicator *server = [ServerCommunicator sharedInstance];
-    //[server doPostJobWithURLString:SENDMESSAGE_URL parameters:<#(NSDictionary *)#> data:nil completion:nil]
+
     
 }
+
 
 
 - (void)didReceiveMemoryWarning {

@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#define DATA_KEY    @"data"
+
+
 #define BASE_URL @"http://203.64.42.80/webapp/ap103/"
 #define SENDMESSAGE_URL [BASE_URL stringByAppendingPathComponent:@"sendMessage.php"]
+#define UPDATEDEVICETOKEN_URL [BASE_URL stringByAppendingPathComponent:@"updateDeviceToken.php"]
 
 typedef void(^DoneHeandler)(NSError *error,id result);
 

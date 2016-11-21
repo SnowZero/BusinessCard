@@ -11,6 +11,8 @@
 
 #define BASE_URL @"http://203.64.42.80/webapp/ap103/"
 #define SENDMESSAGE_URL [BASE_URL stringByAppendingPathComponent:@"sendMessage.php"]
+#define UPDATEDEVICETOKEN_URL [BASE_URL stringByAppendingPathComponent:@"updateDeviceToken.php"]
+
 
 
 static ServerCommunicator *_singletonCommunicator = nil;
@@ -26,6 +28,14 @@ static ServerCommunicator *_singletonCommunicator = nil;
 }
 
 
+-(void)addMember{
+    ServerCommunicator *server = [ServerCommunicator sharedInstance];
+    NSDictionary *parameters = @{@"number":@"123",
+                                 @"password":@"456",
+                                 @"e-mail":@"789"};
+    
+    [server doPostJobWithURLString:SENDMESSAGE_URL parameters:parameters data:nil completion:nil];
+}
 #pragma mark  - General Post Methods
 - (void) doPostJobWithURLString:(NSString*) urlString
                      parameters:(NSDictionary*)parameters
@@ -35,11 +45,14 @@ static ServerCommunicator *_singletonCommunicator = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"doPOST parameters:%@",jsonString);
     
-    NSDictionary *finalParamters = @{@"data":jsonString};
+    
+    NSDictionary *finalParamters = @{DATA_KEY:jsonString};
+
+    NSLog(@"doPOST parameters:%@",finalParamters);
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
+
     [manager POST:urlString
        parameters:finalParamters
 constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
