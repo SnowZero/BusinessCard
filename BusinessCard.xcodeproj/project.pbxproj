@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F9F3B5FA2B2F1548FBD64F3 /* libPods-BusinessCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BE9EFA9F85168B7D151E68 /* libPods-BusinessCard.a */; };
+		825C9FF31DE4255B00411618 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C9FF21DE4255B00411618 /* TableViewController.m */; };
 		82F35EF91DD4498400BE1FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EF81DD4498400BE1FEB /* main.m */; };
 		82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFB1DD4498400BE1FEB /* AppDelegate.m */; };
 		82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFE1DD4498400BE1FEB /* ViewController.m */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		20187EF799DFFB4A1CE1CA7B /* Pods-BusinessCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessCard/Pods-BusinessCard.debug.xcconfig"; sourceTree = "<group>"; };
+		825C9FF11DE4255B00411618 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		825C9FF21DE4255B00411618 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		82F35EF41DD4498400BE1FEB /* BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F35EF81DD4498400BE1FEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		82F35EFA1DD4498400BE1FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				82F35EFD1DD4498400BE1FEB /* ViewController.h */,
 				82F35EFE1DD4498400BE1FEB /* ViewController.m */,
 				82F35F001DD4498400BE1FEB /* Main.storyboard */,
+				825C9FF11DE4255B00411618 /* TableViewController.h */,
+				825C9FF21DE4255B00411618 /* TableViewController.m */,
 				82F35F031DD4498400BE1FEB /* Assets.xcassets */,
 				82F35F051DD4498400BE1FEB /* LaunchScreen.storyboard */,
 				82F35F081DD4498400BE1FEB /* Info.plist */,
@@ -233,6 +238,7 @@
 				82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */,
 				82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */,
 				82F35EF91DD4498400BE1FEB /* main.m in Sources */,
+				825C9FF31DE4255B00411618 /* TableViewController.m in Sources */,
 				82F35F101DD46F7300BE1FEB /* ServerCommunicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

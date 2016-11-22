@@ -36,6 +36,7 @@ static ServerCommunicator *_singletonCommunicator = nil;
     
     [server doPostJobWithURLString:SENDMESSAGE_URL parameters:parameters data:nil completion:nil];
 }
+
 #pragma mark  - General Post Methods
 - (void) doPostJobWithURLString:(NSString*) urlString
                      parameters:(NSDictionary*)parameters

@@ -22,6 +22,28 @@
     
 }
 
+- (IBAction)testBtn:(id)sender {
+    ServerCommunicator *server = [ServerCommunicator sharedInstance];
+    NSDictionary *parameters = @{@"number":@"123",
+                                 @"password":@"456",
+                                 @"e-mail":@"789"};
+    
+    [server doPostJobWithURLString:RETRIVEMESSAGES_URL parameters:parameters data:nil completion:^(NSError *error, id result) {
+        if (error) {
+            NSLog(@"Retrive Messages Fail: %@",error);
+            return;
+        }
+        NSArray *items = result[MESSAGES_KEY];
+        if (items.count == 0) {
+            NSLog(@"No new message. Do noting here.");
+            return;
+        }
+        for (NSDictionary *tmp in items) {
+            NSLog(@"number : %@", tmp[@"number"]);
+        }
+        
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {
