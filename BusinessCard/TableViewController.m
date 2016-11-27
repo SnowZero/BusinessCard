@@ -7,8 +7,12 @@
 //
 
 #import "TableViewController.h"
+#import "ServerCommunicator.h"
 
-@interface TableViewController ()
+@interface TableViewController (){
+    ServerCommunicator *server;
+    NSMutableArray *friendArray;
+}
 
 @end
 
@@ -19,10 +23,39 @@
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    server = [ServerCommunicator sharedInstance];
+    friendArray = [NSMutableArray new];
+    
+    
+    [server doPostJobWithURLString:GETFRIEND_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
+        if (error) {
+            NSLog(@"Retrive Messages Fail: %@",error);
+            return;
+        }
+        NSArray *items = result[MESSAGES_KEY];
+        //friendArray = result[MESSAGES_KEY];
+        
+        if (items.count == 0) {
+            NSLog(@"No new message. Do noting here.");
+            return;
+        }
+        //[self.tableView reloadData];
+        
+         for (NSDictionary *tmp in items) {
+             [friendArray addObject:tmp[@"id"]];
+         }
+        [self.tableView reloadData];
+
+    }];
+
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -33,23 +66,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return friendArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    NSString *myId = friendArray[indexPath.row];
+    NSLog(@"%@",myId);
+    [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":myId} data:nil completion:^(NSError *error, id result) {
+        if (error) {
+            NSLog(@"Retrive Messages Fail: %@",error);
+            return;
+        }
+        NSArray *items = result[MESSAGES_KEY];
+        if (items.count == 0) {
+            NSLog(@"No new message. Do noting here.");
+            return;
+        }
+        
+        for (NSDictionary *tmp in items) {
+            NSLog(@"number : %@", tmp[@"number"]);
+            NSLog(@"name : %@", tmp[@"name"]);
+            cell.textLabel.text = tmp[@"name"];
+        }
+    }];
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -15,7 +15,9 @@
 #define SENDMESSAGE_URL [BASE_URL stringByAppendingPathComponent:@"sendMessage.php"]
 #define UPDATEDEVICETOKEN_URL [BASE_URL stringByAppendingPathComponent:@"updateDeviceToken.php"]
 #define RETRIVEMESSAGES_URL [BASE_URL stringByAppendingPathComponent:@"retriveMessages.php"]
-
+#define ADDFRIEND_URL [BASE_URL stringByAppendingPathComponent:@"addFriend.php"]
+#define GETFRIEND_URL [BASE_URL stringByAppendingPathComponent:@"getFriend.php"]
+#define GET_USERDATA_URL [BASE_URL stringByAppendingPathComponent:@"getUserData.php"]
 
 typedef void(^DoneHeandler)(NSError *error,id result);
 
