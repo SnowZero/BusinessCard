@@ -10,6 +10,7 @@
 		2F9F3B5FA2B2F1548FBD64F3 /* libPods-BusinessCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BE9EFA9F85168B7D151E68 /* libPods-BusinessCard.a */; };
 		82009CD01DEABE9E00F014B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CCF1DEABE9E00F014B0 /* MainViewController.m */; };
 		82009CD31DEAE7DA00F014B0 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CD21DEAE7DA00F014B0 /* DataManager.m */; };
+		82009CD61DEAFA1100F014B0 /* MyDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CD51DEAFA1100F014B0 /* MyDataViewController.m */; };
 		825C9FF31DE4255B00411618 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C9FF21DE4255B00411618 /* TableViewController.m */; };
 		82F35EF91DD4498400BE1FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EF81DD4498400BE1FEB /* main.m */; };
 		82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFB1DD4498400BE1FEB /* AppDelegate.m */; };
@@ -26,6 +27,8 @@
 		82009CCF1DEABE9E00F014B0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		82009CD11DEAE7DA00F014B0 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		82009CD21DEAE7DA00F014B0 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		82009CD41DEAFA1100F014B0 /* MyDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataViewController.h; sourceTree = "<group>"; };
+		82009CD51DEAFA1100F014B0 /* MyDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataViewController.m; sourceTree = "<group>"; };
 		825C9FF11DE4255B00411618 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		825C9FF21DE4255B00411618 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		82F35EF41DD4498400BE1FEB /* BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +106,8 @@
 				82009CCF1DEABE9E00F014B0 /* MainViewController.m */,
 				825C9FF11DE4255B00411618 /* TableViewController.h */,
 				825C9FF21DE4255B00411618 /* TableViewController.m */,
+				82009CD41DEAFA1100F014B0 /* MyDataViewController.h */,
+				82009CD51DEAFA1100F014B0 /* MyDataViewController.m */,
 				82009CD11DEAE7DA00F014B0 /* DataManager.h */,
 				82009CD21DEAE7DA00F014B0 /* DataManager.m */,
 				82F35F031DD4498400BE1FEB /* Assets.xcassets */,
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82009CD61DEAFA1100F014B0 /* MyDataViewController.m in Sources */,
 				82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */,
 				82009CD01DEABE9E00F014B0 /* MainViewController.m in Sources */,
 				82009CD31DEAE7DA00F014B0 /* DataManager.m in Sources */,
