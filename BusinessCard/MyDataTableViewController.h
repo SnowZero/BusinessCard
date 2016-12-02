@@ -1,5 +1,5 @@
 //
-//  MyDataViewController.h
+//  MyDataTableViewController.h
 //  BusinessCard
 //
 //  Created by Snos on 2016/12/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyDataViewController : UIViewController
+@interface MyDataTableViewController : UITableViewController
 
 @end

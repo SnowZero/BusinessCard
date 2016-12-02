@@ -10,7 +10,10 @@
 		2F9F3B5FA2B2F1548FBD64F3 /* libPods-BusinessCard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BE9EFA9F85168B7D151E68 /* libPods-BusinessCard.a */; };
 		82009CD01DEABE9E00F014B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CCF1DEABE9E00F014B0 /* MainViewController.m */; };
 		82009CD31DEAE7DA00F014B0 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CD21DEAE7DA00F014B0 /* DataManager.m */; };
-		82009CD61DEAFA1100F014B0 /* MyDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CD51DEAFA1100F014B0 /* MyDataViewController.m */; };
+		82009CD91DF1615800F014B0 /* MyDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CD81DF1615800F014B0 /* MyDataTableViewController.m */; };
+		82009CE01DF1621D00F014B0 /* TableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CDE1DF1621D00F014B0 /* TableViewCell1.m */; };
+		82009CE11DF1621D00F014B0 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */; };
+		82009CE41DF1700D00F014B0 /* MyDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CE31DF1700D00F014B0 /* MyDataViewController.m */; };
 		825C9FF31DE4255B00411618 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C9FF21DE4255B00411618 /* TableViewController.m */; };
 		82F35EF91DD4498400BE1FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EF81DD4498400BE1FEB /* main.m */; };
 		82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFB1DD4498400BE1FEB /* AppDelegate.m */; };
@@ -27,8 +30,13 @@
 		82009CCF1DEABE9E00F014B0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		82009CD11DEAE7DA00F014B0 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		82009CD21DEAE7DA00F014B0 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		82009CD41DEAFA1100F014B0 /* MyDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataViewController.h; sourceTree = "<group>"; };
-		82009CD51DEAFA1100F014B0 /* MyDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataViewController.m; sourceTree = "<group>"; };
+		82009CD71DF1615800F014B0 /* MyDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataTableViewController.h; sourceTree = "<group>"; };
+		82009CD81DF1615800F014B0 /* MyDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataTableViewController.m; sourceTree = "<group>"; };
+		82009CDD1DF1621D00F014B0 /* TableViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell1.h; sourceTree = "<group>"; };
+		82009CDE1DF1621D00F014B0 /* TableViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell1.m; sourceTree = "<group>"; };
+		82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell1.xib; sourceTree = "<group>"; };
+		82009CE21DF1700D00F014B0 /* MyDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataViewController.h; sourceTree = "<group>"; };
+		82009CE31DF1700D00F014B0 /* MyDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataViewController.m; sourceTree = "<group>"; };
 		825C9FF11DE4255B00411618 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		825C9FF21DE4255B00411618 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		82F35EF41DD4498400BE1FEB /* BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,8 +114,13 @@
 				82009CCF1DEABE9E00F014B0 /* MainViewController.m */,
 				825C9FF11DE4255B00411618 /* TableViewController.h */,
 				825C9FF21DE4255B00411618 /* TableViewController.m */,
-				82009CD41DEAFA1100F014B0 /* MyDataViewController.h */,
-				82009CD51DEAFA1100F014B0 /* MyDataViewController.m */,
+				82009CD71DF1615800F014B0 /* MyDataTableViewController.h */,
+				82009CD81DF1615800F014B0 /* MyDataTableViewController.m */,
+				82009CE21DF1700D00F014B0 /* MyDataViewController.h */,
+				82009CE31DF1700D00F014B0 /* MyDataViewController.m */,
+				82009CDD1DF1621D00F014B0 /* TableViewCell1.h */,
+				82009CDE1DF1621D00F014B0 /* TableViewCell1.m */,
+				82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */,
 				82009CD11DEAE7DA00F014B0 /* DataManager.h */,
 				82009CD21DEAE7DA00F014B0 /* DataManager.m */,
 				82F35F031DD4498400BE1FEB /* Assets.xcassets */,
@@ -192,6 +205,7 @@
 				82F35F071DD4498400BE1FEB /* LaunchScreen.storyboard in Resources */,
 				82F35F041DD4498400BE1FEB /* Assets.xcassets in Resources */,
 				82F35F021DD4498400BE1FEB /* Main.storyboard in Resources */,
+				82009CE11DF1621D00F014B0 /* TableViewCell1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82009CD61DEAFA1100F014B0 /* MyDataViewController.m in Sources */,
+				82009CE01DF1621D00F014B0 /* TableViewCell1.m in Sources */,
 				82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */,
 				82009CD01DEABE9E00F014B0 /* MainViewController.m in Sources */,
 				82009CD31DEAE7DA00F014B0 /* DataManager.m in Sources */,
+				82009CE41DF1700D00F014B0 /* MyDataViewController.m in Sources */,
 				82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */,
 				82F35EF91DD4498400BE1FEB /* main.m in Sources */,
+				82009CD91DF1615800F014B0 /* MyDataTableViewController.m in Sources */,
 				825C9FF31DE4255B00411618 /* TableViewController.m in Sources */,
 				82F35F101DD46F7300BE1FEB /* ServerCommunicator.m in Sources */,
 			);
