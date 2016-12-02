@@ -44,7 +44,7 @@
         //[self.tableView reloadData];
         
          for (NSDictionary *tmp in items) {
-             [friendArray addObject:tmp[@"id"]];
+             [friendArray addObject:tmp[@"friend_id"]];
          }
         [self.tableView reloadData];
 
@@ -78,9 +78,12 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
     NSString *myId = friendArray[indexPath.row];
     NSLog(@"%@",myId);
+    
     [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":myId} data:nil completion:^(NSError *error, id result) {
         if (error) {
             NSLog(@"Retrive Messages Fail: %@",error);
