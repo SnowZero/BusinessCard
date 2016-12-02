@@ -12,6 +12,7 @@
 
 @interface MyDataTableViewController (){
     NSArray *arrayOfCellData;
+    NSMutableArray *inputArray;
     ServerCommunicator *server;
 }
 
@@ -22,18 +23,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    inputArray = [NSMutableArray new];
 
-    
-    arrayOfCellData = @[@{@"label":@"姓名",@"text":@""},
-                        @{@"label":@"電話",@"text":@""},
-                        @{@"label":@"市話",@"text":@""},
-                        @{@"label":@"E-mail",@"text":@""},
-                        @{@"label":@"地址",@"text":@""},
-                        @{@"label":@"facebook",@"text":@""},
-                        @{@"label":@"line",@"text":@""},
-                        @{@"label":@"公司名稱",@"text":@""},
-                        @{@"label":@"網址",@"text":@""}];
+
+    arrayOfCellData = @[@{@"label":@"姓名"},
+                        @{@"label":@"電話"},
+                        @{@"label":@"市話"},
+                        @{@"label":@"E-mail"},
+                        @{@"label":@"地址"},
+                        @{@"label":@"facebook"},
+                        @{@"label":@"line"},
+                        @{@"label":@"公司名稱"},
+                        @{@"label":@"網址"}];
+
     server = [ServerCommunicator sharedInstance];
     [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
         if (error) {
@@ -45,19 +47,22 @@
             NSLog(@"No new message. Do noting here.");
             return;
         }
-        
+
         for (NSDictionary *tmp in items) {
             arrayOfCellData = @[@{@"label":@"姓名",@"text":tmp[@"name"]},
-                                @{@"label":@"電話",@"text":@""},
-                                @{@"label":@"市話",@"text":@""},
-                                @{@"label":@"E-mail",@"text":@""},
-                                @{@"label":@"地址",@"text":@""},
-                                @{@"label":@"facebook",@"text":@""},
-                                @{@"label":@"line",@"text":@""},
-                                @{@"label":@"公司名稱",@"text":@""},
-                                @{@"label":@"網址",@"text":@""}];
+                                @{@"label":@"電話",@"text":tmp[@"phone"]},
+                                @{@"label":@"市話",@"text":tmp[@"loacalphone"]},
+                                @{@"label":@"E-mail",@"text":tmp[@"mail"]},
+                                @{@"label":@"地址",@"text":tmp[@"address"]},
+                                @{@"label":@"facebook",@"text":tmp[@"facebook"]},
+                                @{@"label":@"line",@"text":tmp[@"line"]},
+                                @{@"label":@"公司名稱",@"text":tmp[@"companyname"]},
+                                @{@"label":@"網址",@"text":tmp[@"web"]}];
+             
             NSLog(@"number : %@", tmp[@"number"]);
             NSLog(@"name : %@", tmp[@"name"]);
+            NSLog(@"%@",arrayOfCellData);
+            
         }
         
         [self.tableView reloadData];
@@ -93,14 +98,43 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableViewCell1 *cell = (TableViewCell1*)[tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
+    TableViewCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
     cell.labelText.text = arrayOfCellData[indexPath.row][@"label"];
-    cell.inputText.text = arrayOfCellData[indexPath.row][@"text"];
+    if (arrayOfCellData[indexPath.row][@"text"]) {
+        NSString *test = arrayOfCellData[indexPath.row][@"text"];
+        NSLog(@"%@",test);
+        cell.inputText.text = test;
+        [inputArray addObject:cell.inputText];
+    }
+
+
+    
 
     // Configure the cell...
     return cell;
 }
 
+- (IBAction)saveMyData:(id)sender {
+    NSMutableArray *inputString = [NSMutableArray new];
+    for (UITextField *textField in inputArray) {
+        NSLog(@"輸入字：%@",textField.text);
+        [inputString addObject:textField.text];
+    }
+    NSDictionary *parameters = @{@"id":@"1",
+                                 @"name":inputString[0],
+                                 @"phone":inputString[1],
+                                 @"loacalphone":inputString[2],
+                                 @"mail":inputString[3],
+                                 @"address":inputString[4],
+                                 @"facebook":inputString[5],
+                                 @"line":inputString[6],
+                                 @"companyname":inputString[7],
+                                 @"webURL":inputString[8]};
+    //NSLog(@"%@",parameters);
+
+    [server doPostJobWithURLString:UPDATE_USERDATA_URL parameters:parameters data:nil completion:nil];
+
+}
 
 /*
 // Override to support conditional editing of the table view.
