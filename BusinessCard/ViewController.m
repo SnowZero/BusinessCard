@@ -9,18 +9,25 @@
 #import "ViewController.h"
 #import "ServerCommunicator.h"
 #import <FMDatabase.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface ViewController ()
+@interface ViewController () <FBSDKLoginButtonDelegate>
+
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
     
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.delegate = self;
+   
+
 }
 
 - (IBAction)testBtn:(id)sender {
@@ -165,11 +172,55 @@
     [db close];
 }
 
+- (void)  loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+                error:(NSError *)error;
+{
+    // 舊式的寫法
+    NSArray *permissions = [[NSArray alloc] initWithObjects:
+                            @"public_profile", @"email", @"user_friends", nil];
+//    最新的寫法
+//    loginButton.readPermissions =
+//    @[@"public_profile", @"email", @"user_friends"];
+    
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logOut];
+    
+    [login
+     logInWithReadPermissions: permissions
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         
+         if (error) {
+             // description:顯示error原因
+             NSLog(@"Process error:%@",error.description);
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in %@", result.token.userID);
+         }
+         
+     }];
+    
+
+}
+
+-(void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
+{
+    NSLog(@"登出成功");
+}
+
+-(BOOL)loginButtonWillLogin:(FBSDKLoginButton *)loginButton
+{
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

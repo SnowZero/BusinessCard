@@ -19,6 +19,10 @@
 		82F35F041DD4498400BE1FEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F35F031DD4498400BE1FEB /* Assets.xcassets */; };
 		82F35F071DD4498400BE1FEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F35F051DD4498400BE1FEB /* LaunchScreen.storyboard */; };
 		82F35F101DD46F7300BE1FEB /* ServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35F0F1DD46F7300BE1FEB /* ServerCommunicator.m */; };
+		E159E6251DEED0B300489B78 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6211DEED0B300489B78 /* Bolts.framework */; };
+		E159E6261DEED0B300489B78 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */; };
+		E159E6271DEED0B300489B78 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6231DEED0B300489B78 /* FBSDKLoginKit.framework */; };
+		E159E6281DEED0B300489B78 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6241DEED0B300489B78 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,11 @@
 		82F35F0E1DD46F7300BE1FEB /* ServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerCommunicator.h; sourceTree = "<group>"; };
 		82F35F0F1DD46F7300BE1FEB /* ServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerCommunicator.m; sourceTree = "<group>"; };
 		AC3F65BCC1AFDB8BF2B9750D /* Pods-BusinessCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessCard/Pods-BusinessCard.release.xcconfig"; sourceTree = "<group>"; };
+		E159E6211DEED0B300489B78 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E159E6231DEED0B300489B78 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E159E6241DEED0B300489B78 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E1F033111DF1A2A200C954AD /* BusinessCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BusinessCard.entitlements; sourceTree = "<group>"; };
 		F1BE9EFA9F85168B7D151E68 /* libPods-BusinessCard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BusinessCard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -53,6 +62,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9F3B5FA2B2F1548FBD64F3 /* libPods-BusinessCard.a in Frameworks */,
+				E159E6261DEED0B300489B78 /* FBSDKCoreKit.framework in Frameworks */,
+				E159E6281DEED0B300489B78 /* FBSDKShareKit.framework in Frameworks */,
+				E159E6271DEED0B300489B78 /* FBSDKLoginKit.framework in Frameworks */,
+				E159E6251DEED0B300489B78 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,10 @@
 		28F787093D880EFDC7284DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E159E6211DEED0B300489B78 /* Bolts.framework */,
+				E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */,
+				E159E6231DEED0B300489B78 /* FBSDKLoginKit.framework */,
+				E159E6241DEED0B300489B78 /* FBSDKShareKit.framework */,
 				F1BE9EFA9F85168B7D151E68 /* libPods-BusinessCard.a */,
 			);
 			name = Frameworks;
@@ -97,6 +114,7 @@
 		82F35EF61DD4498400BE1FEB /* BusinessCard */ = {
 			isa = PBXGroup;
 			children = (
+				E1F033111DF1A2A200C954AD /* BusinessCard.entitlements */,
 				82F35EFA1DD4498400BE1FEB /* AppDelegate.h */,
 				82F35EFB1DD4498400BE1FEB /* AppDelegate.m */,
 				82F35EFD1DD4498400BE1FEB /* ViewController.h */,
@@ -162,7 +180,13 @@
 				TargetAttributes = {
 					82F35EF31DD4498400BE1FEB = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = L69ZDBX9QZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -378,6 +402,14 @@
 			baseConfigurationReference = 20187EF799DFFB4A1CE1CA7B /* Pods-BusinessCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BusinessCard/BusinessCard.entitlements;
+				DEVELOPMENT_TEAM = L69ZDBX9QZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+					"~/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = BusinessCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -391,6 +423,14 @@
 			baseConfigurationReference = AC3F65BCC1AFDB8BF2B9750D /* Pods-BusinessCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BusinessCard/BusinessCard.entitlements;
+				DEVELOPMENT_TEAM = L69ZDBX9QZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+					"~/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = BusinessCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

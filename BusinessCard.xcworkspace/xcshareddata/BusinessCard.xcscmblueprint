@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2B3A0F5588BF315222930B5D37AA136C8259FA16",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2B3A0F5588BF315222930B5D37AA136C8259FA16" : 9223372036854775807,
+    "5E7A6A98C114827865A7ECC68AD3CFE945771683" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "240C2283-6018-4AF1-AA68-BF983EBE93FA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2B3A0F5588BF315222930B5D37AA136C8259FA16" : "BusinessCard\/",
+    "5E7A6A98C114827865A7ECC68AD3CFE945771683" : "CuckooChicken\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BusinessCard",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BusinessCard.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SnowZero\/BusinessCard.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2B3A0F5588BF315222930B5D37AA136C8259FA16"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SnowZero\/CuckooChicken.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5E7A6A98C114827865A7ECC68AD3CFE945771683"
+    }
+  ]
+}
