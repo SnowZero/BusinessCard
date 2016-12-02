@@ -18,6 +18,8 @@
 #define ADDFRIEND_URL [BASE_URL stringByAppendingPathComponent:@"addFriend.php"]
 #define GETFRIEND_URL [BASE_URL stringByAppendingPathComponent:@"getFriend.php"]
 #define GET_USERDATA_URL [BASE_URL stringByAppendingPathComponent:@"getUserData.php"]
+#define UPDATE_USERDATA_URL [BASE_URL stringByAppendingPathComponent:@"updateUserData.php"]
+
 
 typedef void(^DoneHeandler)(NSError *error,id result);
 

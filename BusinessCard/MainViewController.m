@@ -48,7 +48,7 @@
 }
 - (IBAction)addBtn:(id)sender {
     NSDictionary *parameters = @{@"id":@"1",
-                                 @"friend_id":@"2"};
+                                 @"friend_id":@""};
     [server doPostJobWithURLString:ADDFRIEND_URL parameters:parameters data:nil completion:nil];
 }
 

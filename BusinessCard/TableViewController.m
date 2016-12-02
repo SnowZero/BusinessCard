@@ -44,7 +44,7 @@
         //[self.tableView reloadData];
         
          for (NSDictionary *tmp in items) {
-             [friendArray addObject:tmp[@"id"]];
+             [friendArray addObject:tmp[@"friend_id"]];
          }
         [self.tableView reloadData];
 
@@ -78,9 +78,12 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
     NSString *myId = friendArray[indexPath.row];
     NSLog(@"%@",myId);
+    
     [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":myId} data:nil completion:^(NSError *error, id result) {
         if (error) {
             NSLog(@"Retrive Messages Fail: %@",error);
@@ -112,7 +115,7 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -122,7 +125,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

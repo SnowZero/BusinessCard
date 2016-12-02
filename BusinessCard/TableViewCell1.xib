@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="TableViewCell1">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-9t-mUL">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="7bH-9t-mUL" secondAttribute="height" multiplier="8:5" id="AtM-rT-I1P"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZt-Io-hNw">
+                        <rect key="frame" x="112" y="15" width="97" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7bH-9t-mUL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="7f8-PX-Fcy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7bH-9t-mUL" secondAttribute="bottom" constant="-8" id="Dbw-IU-hUD"/>
+                    <constraint firstItem="pZt-Io-hNw" firstAttribute="leading" secondItem="7bH-9t-mUL" secondAttribute="trailing" constant="16" id="Pqq-5I-Y0H"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pZt-Io-hNw" secondAttribute="trailing" constant="139" id="T4G-Jb-v1U"/>
+                    <constraint firstItem="pZt-Io-hNw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cC8-aR-pVJ"/>
+                    <constraint firstItem="7bH-9t-mUL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="fIs-zd-xpO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-178" y="70"/>
+        </tableViewCell>
+    </objects>
+</document>
