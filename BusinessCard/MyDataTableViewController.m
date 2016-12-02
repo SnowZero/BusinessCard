@@ -132,7 +132,20 @@
                                  @"webURL":inputString[8]};
     //NSLog(@"%@",parameters);
 
-    [server doPostJobWithURLString:UPDATE_USERDATA_URL parameters:parameters data:nil completion:nil];
+    [server doPostJobWithURLString:UPDATE_USERDATA_URL parameters:parameters data:nil completion:^(NSError *error, id result) {
+        NSString *log;
+        if (error) {
+            log = @"資料保存失敗";
+        }else{
+            log = @"資料保存成功";
+        }
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:log message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"確定" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alertController addAction:cancelAction];
+        //把Alert對話框顯示出來
+        [self presentViewController:alertController animated:YES completion:nil];
+    }];
 
 }
 
