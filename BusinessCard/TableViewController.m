@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "FriendTableViewController.h"
 #import "ServerCommunicator.h"
 
 @interface TableViewController (){
@@ -125,11 +126,18 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FriendTableViewController *mvc = (FriendTableViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"FriendTable"];
+    // 跳到下一頁
+    mvc.friendID = friendArray[indexPath.row];
+    
+    [self.navigationController pushViewController:mvc animated:true];
+}
 
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
 }
 */
 

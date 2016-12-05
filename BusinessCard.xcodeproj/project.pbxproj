@@ -14,7 +14,10 @@
 		82009CE01DF1621D00F014B0 /* TableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CDE1DF1621D00F014B0 /* TableViewCell1.m */; };
 		82009CE11DF1621D00F014B0 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */; };
 		82009CE41DF1700D00F014B0 /* MyDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82009CE31DF1700D00F014B0 /* MyDataViewController.m */; };
+		8213CD431DF45F7E005928FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8213CD421DF45F7E005928FB /* AVFoundation.framework */; };
+		8213CD461DF4634E005928FB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8213CD451DF4634E005928FB /* LoginViewController.m */; };
 		825C9FF31DE4255B00411618 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C9FF21DE4255B00411618 /* TableViewController.m */; };
+		825CB24F1DF4417E00DCAF54 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825CB24E1DF4417E00DCAF54 /* CoreImage.framework */; };
 		82F35EF91DD4498400BE1FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EF81DD4498400BE1FEB /* main.m */; };
 		82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFB1DD4498400BE1FEB /* AppDelegate.m */; };
 		82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFE1DD4498400BE1FEB /* ViewController.m */; };
@@ -22,6 +25,8 @@
 		82F35F041DD4498400BE1FEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F35F031DD4498400BE1FEB /* Assets.xcassets */; };
 		82F35F071DD4498400BE1FEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F35F051DD4498400BE1FEB /* LaunchScreen.storyboard */; };
 		82F35F101DD46F7300BE1FEB /* ServerCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35F0F1DD46F7300BE1FEB /* ServerCommunicator.m */; };
+		82F752EE1DF3ED270066CD63 /* FriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F752ED1DF3ED270066CD63 /* FriendTableViewController.m */; };
+		82F752F31DF42E460066CD63 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F752F21DF42E460066CD63 /* FriendTableViewCell.m */; };
 		E159E6251DEED0B300489B78 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6211DEED0B300489B78 /* Bolts.framework */; };
 		E159E6261DEED0B300489B78 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */; };
 		E159E6271DEED0B300489B78 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E159E6231DEED0B300489B78 /* FBSDKLoginKit.framework */; };
@@ -41,8 +46,12 @@
 		82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell1.xib; sourceTree = "<group>"; };
 		82009CE21DF1700D00F014B0 /* MyDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataViewController.h; sourceTree = "<group>"; };
 		82009CE31DF1700D00F014B0 /* MyDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataViewController.m; sourceTree = "<group>"; };
+		8213CD421DF45F7E005928FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8213CD441DF4634E005928FB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8213CD451DF4634E005928FB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		825C9FF11DE4255B00411618 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		825C9FF21DE4255B00411618 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		825CB24E1DF4417E00DCAF54 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		82F35EF41DD4498400BE1FEB /* BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F35EF81DD4498400BE1FEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		82F35EFA1DD4498400BE1FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +64,10 @@
 		82F35F081DD4498400BE1FEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82F35F0E1DD46F7300BE1FEB /* ServerCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerCommunicator.h; sourceTree = "<group>"; };
 		82F35F0F1DD46F7300BE1FEB /* ServerCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerCommunicator.m; sourceTree = "<group>"; };
+		82F752EC1DF3ED270066CD63 /* FriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewController.h; sourceTree = "<group>"; };
+		82F752ED1DF3ED270066CD63 /* FriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewController.m; sourceTree = "<group>"; };
+		82F752F11DF42E460066CD63 /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
+		82F752F21DF42E460066CD63 /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
 		AC3F65BCC1AFDB8BF2B9750D /* Pods-BusinessCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-BusinessCard/Pods-BusinessCard.release.xcconfig"; sourceTree = "<group>"; };
 		E159E6211DEED0B300489B78 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -69,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8213CD431DF45F7E005928FB /* AVFoundation.framework in Frameworks */,
+				825CB24F1DF4417E00DCAF54 /* CoreImage.framework in Frameworks */,
 				2F9F3B5FA2B2F1548FBD64F3 /* libPods-BusinessCard.a in Frameworks */,
 				E159E6261DEED0B300489B78 /* FBSDKCoreKit.framework in Frameworks */,
 				E159E6281DEED0B300489B78 /* FBSDKShareKit.framework in Frameworks */,
@@ -83,6 +98,8 @@
 		28F787093D880EFDC7284DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8213CD421DF45F7E005928FB /* AVFoundation.framework */,
+				825CB24E1DF4417E00DCAF54 /* CoreImage.framework */,
 				E159E6211DEED0B300489B78 /* Bolts.framework */,
 				E159E6221DEED0B300489B78 /* FBSDKCoreKit.framework */,
 				E159E6231DEED0B300489B78 /* FBSDKLoginKit.framework */,
@@ -127,6 +144,8 @@
 				82F35EFB1DD4498400BE1FEB /* AppDelegate.m */,
 				82F35EFD1DD4498400BE1FEB /* ViewController.h */,
 				82F35EFE1DD4498400BE1FEB /* ViewController.m */,
+				8213CD441DF4634E005928FB /* LoginViewController.h */,
+				8213CD451DF4634E005928FB /* LoginViewController.m */,
 				82F35F001DD4498400BE1FEB /* Main.storyboard */,
 				82009CCE1DEABE9E00F014B0 /* MainViewController.h */,
 				82009CCF1DEABE9E00F014B0 /* MainViewController.m */,
@@ -134,10 +153,14 @@
 				825C9FF21DE4255B00411618 /* TableViewController.m */,
 				82009CD71DF1615800F014B0 /* MyDataTableViewController.h */,
 				82009CD81DF1615800F014B0 /* MyDataTableViewController.m */,
+				82F752EC1DF3ED270066CD63 /* FriendTableViewController.h */,
+				82F752ED1DF3ED270066CD63 /* FriendTableViewController.m */,
 				82009CE21DF1700D00F014B0 /* MyDataViewController.h */,
 				82009CE31DF1700D00F014B0 /* MyDataViewController.m */,
 				82009CDD1DF1621D00F014B0 /* TableViewCell1.h */,
 				82009CDE1DF1621D00F014B0 /* TableViewCell1.m */,
+				82F752F11DF42E460066CD63 /* FriendTableViewCell.h */,
+				82F752F21DF42E460066CD63 /* FriendTableViewCell.m */,
 				82009CDF1DF1621D00F014B0 /* TableViewCell1.xib */,
 				82009CD11DEAE7DA00F014B0 /* DataManager.h */,
 				82009CD21DEAE7DA00F014B0 /* DataManager.m */,
@@ -193,7 +216,7 @@
 				TargetAttributes = {
 					82F35EF31DD4498400BE1FEB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = L69ZDBX9QZ;
+						DevelopmentTeam = 4UAE35VF63;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -290,10 +313,13 @@
 			files = (
 				82009CE01DF1621D00F014B0 /* TableViewCell1.m in Sources */,
 				82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */,
+				8213CD461DF4634E005928FB /* LoginViewController.m in Sources */,
 				82009CD01DEABE9E00F014B0 /* MainViewController.m in Sources */,
+				82F752EE1DF3ED270066CD63 /* FriendTableViewController.m in Sources */,
 				82009CD31DEAE7DA00F014B0 /* DataManager.m in Sources */,
 				82009CE41DF1700D00F014B0 /* MyDataViewController.m in Sources */,
 				82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */,
+				82F752F31DF42E460066CD63 /* FriendTableViewCell.m in Sources */,
 				82F35EF91DD4498400BE1FEB /* main.m in Sources */,
 				82009CD91DF1615800F014B0 /* MyDataTableViewController.m in Sources */,
 				825C9FF31DE4255B00411618 /* TableViewController.m in Sources */,
@@ -419,7 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BusinessCard/BusinessCard.entitlements;
-				DEVELOPMENT_TEAM = L69ZDBX9QZ;
+				DEVELOPMENT_TEAM = 4UAE35VF63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDK",
@@ -440,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BusinessCard/BusinessCard.entitlements;
-				DEVELOPMENT_TEAM = L69ZDBX9QZ;
+				DEVELOPMENT_TEAM = 4UAE35VF63;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDK",

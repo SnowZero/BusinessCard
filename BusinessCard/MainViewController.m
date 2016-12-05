@@ -9,11 +9,15 @@
 #import "MainViewController.h"
 #import "ServerCommunicator.h"
 #import "DataManager.h"
+#import <CoreImage/CoreImage.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface MainViewController (){
     ServerCommunicator *server;
     DataManager *dataManager;
+    CIImage *qrcodeImage;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imgQRcode;
 
 @end
 
@@ -24,21 +28,15 @@
     // Do any additional setup after loading the view.
     server = [ServerCommunicator sharedInstance];
     dataManager = [DataManager newData];
-    /*
-    [server doPostJobWithURLString:GETFRIEND_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
-        if (error) {
-            NSLog(@"Retrive Messages Fail: %@",error);
-            return;
-        }
-        dataManager.friendArray = result[MESSAGES_KEY];
-        if (dataManager.friendArray.count == 0) {
-            NSLog(@"No new message. Do noting here.");
-            return;
-        }
-        NSLog(@"%i",dataManager.friendArray.count);
-
-    }];
-    */
+    
+    if (qrcodeImage == nil) {
+        NSData *data = [@"123" dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
+        CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+        [filter setValue:data forKey:@"inputMessage"];
+        [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
+        qrcodeImage = filter.outputImage;
+        _imgQRcode.image = [UIImage imageWithCIImage:qrcodeImage];
+    }
     
 }
 
