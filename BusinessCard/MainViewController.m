@@ -11,26 +11,48 @@
 #import "DataManager.h"
 #import <CoreImage/CoreImage.h>
 #import <AVFoundation/AVFoundation.h>
+#import "BusinessCard-Swift.h"
 
-@interface MainViewController (){
+@interface MainViewController ()<AVCaptureMetadataOutputObjectsDelegate>{
     ServerCommunicator *server;
     DataManager *dataManager;
     CIImage *qrcodeImage;
+    
+    AVCaptureSession *aptureSession;
+    AVCaptureVideoPreviewLayer *videoPreviewLayer;
+    NSString *myId;
+    
+
+    __weak IBOutlet UITextField *userID;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imgQRcode;
 
 @end
 
 @implementation MainViewController
+- (IBAction)resetUserID:(id)sender {
+    myId = userID.text;
+    
+    NSString *codeData = [NSString stringWithFormat:@"BusinessCard:%@",myId];
+    NSData *data = [codeData dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    [filter setValue:data forKey:@"inputMessage"];
+    [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
+    qrcodeImage = filter.outputImage;
+    _imgQRcode.image = [UIImage imageWithCIImage:qrcodeImage];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    myId = @"1";
+    
     server = [ServerCommunicator sharedInstance];
     dataManager = [DataManager newData];
     
     if (qrcodeImage == nil) {
-        NSData *data = [@"123" dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
+        NSString *codeData = [NSString stringWithFormat:@"BusinessCard:%@",myId];
+        NSData *data = [codeData dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
         CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
         [filter setValue:data forKey:@"inputMessage"];
         [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
@@ -38,18 +60,54 @@
         _imgQRcode.image = [UIImage imageWithCIImage:qrcodeImage];
     }
     
+
+
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)addBtn:(id)sender {
-    NSDictionary *parameters = @{@"id":@"1",
+    NSDictionary *parameters = @{@"id":myId,
                                  @"friend_id":@""};
     [server doPostJobWithURLString:ADDFRIEND_URL parameters:parameters data:nil completion:nil];
 }
 
+-(void)addFrend:(NSString *)friendId{
+    NSLog(@"%@",friendId);
+    NSDictionary *parameters = @{@"id":myId,
+                                 @"friend_id":friendId};
+    //自己增加好友
+    [server doPostJobWithURLString:ADDFRIEND_URL parameters:parameters data:nil completion:nil];
+    //送出邀請給對方
+    parameters= @{@"id":friendId,
+                  @"friend_id":myId};
+    [server doPostJobWithURLString:ADDFRIEND_URL parameters:parameters data:nil completion:nil];
+    [self showAlert];
+}
+
+- (IBAction)readQRcode:(id)sender {
+    QRScannerController *qrVc = (QRScannerController*)[self.storyboard instantiateViewControllerWithIdentifier:@"qrVc"];
+    // 跳到下一頁
+    qrVc.mainVc = self;
+    
+    [self presentViewController:qrVc animated:YES completion:nil];
+}
+
+
+
+-(void)showAlert{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"邀請好友" message:@"邀請好友成功！" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    //將按鈕加到 alert 上面
+    [alertController addAction:ok];
+    //將 alert 呈現在畫面上
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 

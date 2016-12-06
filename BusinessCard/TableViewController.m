@@ -29,7 +29,12 @@
     server = [ServerCommunicator sharedInstance];
     friendArray = [NSMutableArray new];
     
+    [self startGetFriendList];
     
+
+
+}
+-(void)startGetFriendList{
     [server doPostJobWithURLString:GETFRIEND_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
         if (error) {
             NSLog(@"Retrive Messages Fail: %@",error);
@@ -44,17 +49,12 @@
         }
         //[self.tableView reloadData];
         
-         for (NSDictionary *tmp in items) {
-             [friendArray addObject:tmp[@"friend_id"]];
-         }
+        for (NSDictionary *tmp in items) {
+            [friendArray addObject:tmp[@"friend_id"]];
+        }
         [self.tableView reloadData];
-
+        
     }];
-
-}
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
 }
 
 
@@ -108,6 +108,8 @@
 }
 
 
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -132,6 +134,10 @@
     mvc.friendID = friendArray[indexPath.row];
     
     [self.navigationController pushViewController:mvc animated:true];
+}
+- (IBAction)reloadBtn:(id)sender {
+    [self startGetFriendList];
+    [self.tableView reloadData];
 }
 
 /*
