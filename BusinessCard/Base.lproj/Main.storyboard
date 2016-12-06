@@ -143,7 +143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SY-Aii">
+                            <toolbar alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SY-Aii">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
@@ -469,6 +469,9 @@
                                 <rect key="frame" x="16" y="5" width="56" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reload"/>
+                                <connections>
+                                    <action selector="reloadBtn:" destination="X3U-7c-Bqg" eventType="touchUpInside" id="Zai-oy-8MX"/>
+                                </connections>
                             </button>
                             <connections>
                                 <action selector="reloadBtn:" destination="X3U-7c-Bqg" id="yIC-Lg-Lby"/>

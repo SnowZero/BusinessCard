@@ -9,11 +9,13 @@
 #import "MyDataTableViewController.h"
 #import "ServerCommunicator.h"
 #import "TableViewCell1.h"
+#import "DataManager.h"
 
 @interface MyDataTableViewController (){
     NSArray *arrayOfCellData;
     NSMutableArray *inputArray;
     ServerCommunicator *server;
+    DataManager *dataManager;
 }
 
 @end
@@ -24,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     inputArray = [NSMutableArray new];
-
+    dataManager = [DataManager newData];
 
     arrayOfCellData = @[@{@"label":@"姓名"},
                         @{@"label":@"電話"},
@@ -35,9 +37,13 @@
                         @{@"label":@"line"},
                         @{@"label":@"公司名稱"},
                         @{@"label":@"網址"}];
+    [self startGetMyData];
+}
 
+-(void)startGetMyData{
+    
     server = [ServerCommunicator sharedInstance];
-    [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
+    [server doPostJobWithURLString:GET_USERDATA_URL parameters:@{@"id":dataManager.userId} data:nil completion:^(NSError *error, id result) {
         if (error) {
             NSLog(@"Retrive Messages Fail: %@",error);
             return;
@@ -47,7 +53,7 @@
             NSLog(@"No new message. Do noting here.");
             return;
         }
-
+        
         for (NSDictionary *tmp in items) {
             arrayOfCellData = @[@{@"label":@"姓名",@"text":tmp[@"name"]},
                                 @{@"label":@"電話",@"text":tmp[@"phone"]},
@@ -58,7 +64,7 @@
                                 @{@"label":@"line",@"text":tmp[@"line"]},
                                 @{@"label":@"公司名稱",@"text":tmp[@"companyname"]},
                                 @{@"label":@"網址",@"text":tmp[@"web"]}];
-             
+            
             NSLog(@"number : %@", tmp[@"number"]);
             NSLog(@"name : %@", tmp[@"name"]);
             NSLog(@"%@",arrayOfCellData);
@@ -66,19 +72,15 @@
         }
         
         [self.tableView reloadData];
-
+        
     }];
-
-    
-
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // You code here to update the view.
+    [self startGetMyData];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -120,7 +122,7 @@
         NSLog(@"輸入字：%@",textField.text);
         [inputString addObject:textField.text];
     }
-    NSDictionary *parameters = @{@"id":@"1",
+    NSDictionary *parameters = @{@"id":dataManager.userId,
                                  @"name":inputString[0],
                                  @"phone":inputString[1],
                                  @"loacalphone":inputString[2],

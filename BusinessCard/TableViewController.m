@@ -9,9 +9,11 @@
 #import "TableViewController.h"
 #import "FriendTableViewController.h"
 #import "ServerCommunicator.h"
+#import "DataManager.h"
 
 @interface TableViewController (){
     ServerCommunicator *server;
+    DataManager *dataManager;
     NSMutableArray *friendArray;
 }
 
@@ -28,14 +30,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     server = [ServerCommunicator sharedInstance];
     friendArray = [NSMutableArray new];
+    dataManager = [DataManager newData];
     
     [self startGetFriendList];
-    
-
 
 }
 -(void)startGetFriendList{
-    [server doPostJobWithURLString:GETFRIEND_URL parameters:@{@"id":@"1"} data:nil completion:^(NSError *error, id result) {
+    [server doPostJobWithURLString:GETFRIEND_URL parameters:@{@"id":dataManager.userId} data:nil completion:^(NSError *error, id result) {
         if (error) {
             NSLog(@"Retrive Messages Fail: %@",error);
             return;
@@ -135,9 +136,10 @@
     
     [self.navigationController pushViewController:mvc animated:true];
 }
+
 - (IBAction)reloadBtn:(id)sender {
+    friendArray = [NSMutableArray new];
     [self startGetFriendList];
-    [self.tableView reloadData];
 }
 
 /*

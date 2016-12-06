@@ -11,6 +11,7 @@
 @interface DataManager : NSObject
 
 @property(strong,nonatomic) NSMutableArray *friendArray;
+@property(strong,nonnull) NSString *userId;
 
 +(instancetype) newData;
 

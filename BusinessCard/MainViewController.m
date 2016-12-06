@@ -32,6 +32,7 @@
 @implementation MainViewController
 - (IBAction)resetUserID:(id)sender {
     myId = userID.text;
+    dataManager.userId = myId;
     
     NSString *codeData = [NSString stringWithFormat:@"BusinessCard:%@",myId];
     NSData *data = [codeData dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
@@ -46,10 +47,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     myId = @"1";
-    
+    [userID addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
+
     server = [ServerCommunicator sharedInstance];
     dataManager = [DataManager newData];
-    
+    dataManager.userId = myId;
     if (qrcodeImage == nil) {
         NSString *codeData = [NSString stringWithFormat:@"BusinessCard:%@",myId];
         NSData *data = [codeData dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
@@ -58,13 +60,23 @@
         [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
         qrcodeImage = filter.outputImage;
         _imgQRcode.image = [UIImage imageWithCIImage:qrcodeImage];
+        [self displayQRCodeImage];
     }
     
 
 
 }
+-(void)displayQRCodeImage{
+    //CGFloat scaleX = _imgQRCode.frame.size.width / _qrcodeImage.extent().size.width
+    CIImage *transformedImage = [qrcodeImage imageByApplyingTransform:CGAffineTransformMakeScale(3, 3)];
+    _imgQRcode.image = [UIImage imageWithCIImage:transformedImage];
+    
+
+}
 
 
+    
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -107,6 +119,11 @@
     [alertController addAction:ok];
     //將 alert 呈現在畫面上
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)textFieldDone:(UITextField*)textField
+{
+    [textField resignFirstResponder];
 }
 /*
 #pragma mark - Navigation
