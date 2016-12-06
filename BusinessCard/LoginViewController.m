@@ -19,7 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _fbLoginBtn.delegate = self;
+    _fbLoginBtn.readPermissions =
+    @[@"public_profile", @"email", @"user_friends"];
+    
     if ([FBSDKAccessToken currentAccessToken] !=nil) {
         
     }else{
@@ -27,11 +31,7 @@
     }
 }
 - (IBAction)facebookLoin:(id)sender {
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
-    loginButton.delegate = self;
-
+    // 這個不需要了
 }
 
 
