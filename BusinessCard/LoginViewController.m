@@ -30,21 +30,17 @@
     server = [ServerCommunicator new];
     
     _fbLoginBtn.delegate = self;
-    _fbLoginBtn.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
+    //_fbLoginBtn.readPermissions =@[@"public_profile", @"email", @"user_friends"];
     
     if ([FBSDKAccessToken currentAccessToken] !=nil) {
         fbUid = [[FBSDKAccessToken currentAccessToken] userID];
         NSLog(@"uid:%@",fbUid);
         [self loginToMainVc];
     }else{
-        //_fbLoginBtn.readPermissions = [@"public_profile",@"email",@"user_friends"];
+        _fbLoginBtn.readPermissions =@[@"public_profile", @"email", @"user_friends"];
     }
   
 
-}
-- (IBAction)facebookLoin:(id)sender {
-    // 這個不需要了
 }
 
 
@@ -52,6 +48,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)  loginButton:(FBSDKLoginButton *)loginButton
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error;
@@ -67,25 +64,17 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logOut];
     
-    [login
-     logInWithReadPermissions: permissions
-     fromViewController:self
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-         
-         if (error) {
-             // description:顯示error原因
-             NSLog(@"Process error:%@",error.description);
-         } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
-         } else {
-             NSLog(@"Logged in %@", result.token.userID);
-             fbUid = result.token.userID;
-             [self loginToMainVc];
-         }
-         
-     }];
-    
-    
+    if (error) {
+        // description:顯示error原因
+        NSLog(@"Process error:%@",error.description);
+    } else if (result.isCancelled) {
+        NSLog(@"Cancelled");
+    } else {
+        NSLog(@"Logged in %@", result.token.userID);
+        fbUid = result.token.userID;
+        [self loginToMainVc];
+    }
+
 }
 
 -(void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton

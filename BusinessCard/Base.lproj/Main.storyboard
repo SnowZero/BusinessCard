@@ -107,9 +107,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="rOE-Qs-htf"/>
                                 </constraints>
                                 <state key="normal" title="臉書登入"/>
-                                <connections>
-                                    <action selector="facebookLoin:" destination="rwv-Yf-hwF" eventType="touchUpInside" id="8I3-IQ-JRV"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
