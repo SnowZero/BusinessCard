@@ -32,7 +32,7 @@
     friendArray = [NSMutableArray new];
     dataManager = [DataManager newData];
     
-    [self startGetFriendList];
+    //[self startGetFriendList];
 
 }
 -(void)startGetFriendList{
@@ -56,6 +56,12 @@
         [self.tableView reloadData];
         
     }];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    friendArray = [NSMutableArray new];
+    [self startGetFriendList];
 }
 
 
