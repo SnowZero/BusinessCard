@@ -12,6 +12,7 @@
 #import <CoreImage/CoreImage.h>
 #import <AVFoundation/AVFoundation.h>
 #import "BusinessCard-Swift.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface MainViewController ()<AVCaptureMetadataOutputObjectsDelegate>{
     ServerCommunicator *server;
@@ -46,12 +47,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    myId = @"1";
+    
+    
     [userID addTarget:self action:@selector(textFieldDone:) forControlEvents:UIControlEventEditingDidEndOnExit];
 
     server = [ServerCommunicator sharedInstance];
     dataManager = [DataManager newData];
-    dataManager.userId = myId;
+    myId = dataManager.userId;
     if (qrcodeImage == nil) {
         NSString *codeData = [NSString stringWithFormat:@"BusinessCard:%@",myId];
         NSData *data = [codeData dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:false];
@@ -124,6 +126,12 @@
 -(void)textFieldDone:(UITextField*)textField
 {
     [textField resignFirstResponder];
+}
+
+- (IBAction)logout:(id)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logOut];
+    [self.presentingViewController  dismissViewControllerAnimated:YES completion:nil];
 }
 /*
 #pragma mark - Navigation

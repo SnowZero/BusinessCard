@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="s6z-zx-Zzd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rwv-Yf-hwF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -95,9 +95,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-wK-3FC" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="156" y="318" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Green.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BKC-tR-AOv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-wK-3FC" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="84" y="304" width="205" height="78"/>
                                 <state key="normal" title="臉書登入"/>
                                 <connections>
                                     <action selector="facebookLoin:" destination="rwv-Yf-hwF" eventType="touchUpInside" id="8I3-IQ-JRV"/>
@@ -105,6 +107,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v0m-d9-yWf" firstAttribute="top" secondItem="BKC-tR-AOv" secondAttribute="bottom" id="4Qj-Pg-Mng"/>
+                            <constraint firstItem="BKC-tR-AOv" firstAttribute="top" secondItem="Wuy-x1-A9b" secondAttribute="bottom" id="A5t-NQ-cfh"/>
+                            <constraint firstItem="qA2-wK-3FC" firstAttribute="leading" secondItem="1H7-2q-VX8" secondAttribute="leadingMargin" constant="68" id="FkC-63-ews"/>
+                            <constraint firstItem="BKC-tR-AOv" firstAttribute="leading" secondItem="1H7-2q-VX8" secondAttribute="leading" id="ia3-FG-efH"/>
+                            <constraint firstItem="v0m-d9-yWf" firstAttribute="top" secondItem="qA2-wK-3FC" secondAttribute="bottom" constant="285" id="qxY-QA-yBD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qA2-wK-3FC" secondAttribute="trailing" constant="70" id="udO-Th-h4f"/>
+                            <constraint firstItem="qA2-wK-3FC" firstAttribute="top" secondItem="Wuy-x1-A9b" secondAttribute="bottom" constant="284" id="wXs-c2-A6C"/>
+                            <constraint firstAttribute="trailing" secondItem="BKC-tR-AOv" secondAttribute="trailing" id="yWf-g4-ASm"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="fbLoginBtn" destination="qA2-wK-3FC" id="jg7-r5-HhV"/>
@@ -112,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KR5-ua-bAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="-63"/>
+            <point key="canvasLocation" x="732" y="-63.418290854572717"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="elZ-JV-888">
@@ -143,7 +155,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SY-Aii">
+                            <toolbar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-SY-Aii">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
@@ -211,34 +223,40 @@
                                     <action selector="readQRcode:" destination="uxH-Ry-9Ak" eventType="touchUpInside" id="9pj-8O-d7a"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-Nb-BF9">
-                                <rect key="frame" x="16" y="28" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrf-rS-bdH">
-                                <rect key="frame" x="128" y="28" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="resetUserID:" destination="uxH-Ry-9Ak" eventType="touchUpInside" id="IFH-Fb-R2A"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCa-Gs-gof">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <items>
+                                    <navigationItem title="掃描QRcode" id="k3W-0e-VXG">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="dyc-l5-jXe">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VN8-XD-BGf">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="登出"/>
+                                                <connections>
+                                                    <action selector="logout:" destination="uxH-Ry-9Ak" eventType="touchUpInside" id="9Ab-0m-WPQ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WCa-Gs-gof" secondAttribute="trailing" id="1df-pF-ten"/>
                             <constraint firstItem="sCh-jw-rxn" firstAttribute="centerX" secondItem="MJl-wl-Sy5" secondAttribute="centerX" id="B8T-ny-tG1"/>
                             <constraint firstItem="3Wz-jQ-8Kw" firstAttribute="centerX" secondItem="MJl-wl-Sy5" secondAttribute="centerX" id="BeU-w9-pBy"/>
+                            <constraint firstAttribute="trailing" secondItem="WCa-Gs-gof" secondAttribute="trailing" id="F0O-ds-z22"/>
+                            <constraint firstItem="WCa-Gs-gof" firstAttribute="top" secondItem="MJl-wl-Sy5" secondAttribute="top" id="Nc2-Mg-m3n"/>
                             <constraint firstItem="Vny-cI-oha" firstAttribute="top" secondItem="sCh-jw-rxn" secondAttribute="bottom" constant="8" id="YKO-hc-hon"/>
                             <constraint firstItem="3Wz-jQ-8Kw" firstAttribute="centerY" secondItem="MJl-wl-Sy5" secondAttribute="centerY" id="m6o-y0-EH2"/>
+                            <constraint firstItem="WCa-Gs-gof" firstAttribute="leading" secondItem="MJl-wl-Sy5" secondAttribute="leading" id="oYV-I7-aZy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="cXF-qW-8uf"/>
                     <connections>
                         <outlet property="imgQRcode" destination="3Wz-jQ-8Kw" id="YmI-UP-HzZ"/>
-                        <outlet property="userID" destination="1lu-Nb-BF9" id="prO-wM-HMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7r-eF-Fh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,7 +504,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="HD2-1M-d9b">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s6z-zx-Zzd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabC" automaticallyAdjustsScrollViewInsets="NO" id="s6z-zx-Zzd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Nvk-PY-GJ9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -505,6 +523,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Green.jpg" width="1280" height="1280"/>
         <image name="camera.png" width="32" height="32"/>
         <image name="cross.png" width="40" height="40"/>
     </resources>

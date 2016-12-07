@@ -20,6 +20,7 @@
 #define GET_USERDATA_URL [BASE_URL stringByAppendingPathComponent:@"getUserData.php"]
 #define UPDATE_USERDATA_URL [BASE_URL stringByAppendingPathComponent:@"updateUserData.php"]
 #define SET_FRIEND_URL [BASE_URL stringByAppendingPathComponent:@"waitFriend.php"]
+#define CHECK_MEMBER_URL [BASE_URL stringByAppendingPathComponent:@"checkMember.php"]
 
 
 typedef void(^DoneHeandler)(NSError *error,id result);

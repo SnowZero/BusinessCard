@@ -12,6 +12,7 @@
 
 @property(strong,nonatomic) NSMutableArray *friendArray;
 @property(strong,nonnull) NSString *userId;
+@property(strong,nonnull) NSString *fbUid;
 
 +(instancetype) newData;
 

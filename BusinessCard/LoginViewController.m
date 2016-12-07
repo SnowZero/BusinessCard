@@ -7,10 +7,17 @@
 //
 
 #import "LoginViewController.h"
+#import "ServerCommunicator.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "DataManager.h"
 
-@interface LoginViewController  ()<FBSDKLoginButtonDelegate>
+@interface LoginViewController  ()<FBSDKLoginButtonDelegate>{
+    DataManager *dataManager;
+    ServerCommunicator *server;
+
+    NSString *fbUid;
+}
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginBtn;
 
 @end
@@ -19,16 +26,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dataManager = [DataManager newData];
+    server = [ServerCommunicator new];
     
     _fbLoginBtn.delegate = self;
     _fbLoginBtn.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     
     if ([FBSDKAccessToken currentAccessToken] !=nil) {
-        
+        fbUid = [[FBSDKAccessToken currentAccessToken] userID];
+        NSLog(@"uid:%@",fbUid);
+        [self loginToMainVc];
     }else{
         //_fbLoginBtn.readPermissions = [@"public_profile",@"email",@"user_friends"];
     }
+  
+
 }
 - (IBAction)facebookLoin:(id)sender {
     // 這個不需要了
@@ -66,6 +79,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
              NSLog(@"Cancelled");
          } else {
              NSLog(@"Logged in %@", result.token.userID);
+             fbUid = result.token.userID;
+             [self loginToMainVc];
          }
          
      }];
@@ -82,6 +97,30 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 {
     return YES;
 }
+
+-(void)loginToMainVc{
+    
+    dataManager.fbUid = fbUid;
+    [self checkMember];
+
+}
+
+
+-(void)checkMember{
+    [server doPostJobWithURLString:CHECK_MEMBER_URL parameters:@{@"UID":dataManager.fbUid,@"1":@"2"} data:nil completion:^(NSError *error, id result) {
+        if (error) {
+            NSLog(@"error:%@",error);
+        }else{
+            NSLog(@"%@",result[@"result"]);
+            dataManager.userId = result[@"result"];
+            
+            UIViewController *qrVc = [self.storyboard instantiateViewControllerWithIdentifier:@"TabC"];
+            // 跳到下一頁
+            [self presentViewController:qrVc animated:YES completion:nil];
+        }
+    }];
+}
+
 /*
 #pragma mark - Navigation
 

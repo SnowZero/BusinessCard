@@ -21,6 +21,8 @@
 		827273C21DF69401001851CE /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827273C11DF69401001851CE /* QRScannerController.swift */; };
 		827273C71DF696EB001851CE /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 827273C61DF696EB001851CE /* camera.png */; };
 		827273C91DF69761001851CE /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 827273C81DF69761001851CE /* cross@2x.png */; };
+		82E906981DF7CE9100BC7548 /* water-bubbles-920071_1280.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82E906971DF7CE9100BC7548 /* water-bubbles-920071_1280.jpg */; };
+		82E9069C1DF7D05D00BC7548 /* Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82E9069B1DF7D05D00BC7548 /* Green.jpg */; };
 		82F35EF91DD4498400BE1FEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EF81DD4498400BE1FEB /* main.m */; };
 		82F35EFC1DD4498400BE1FEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFB1DD4498400BE1FEB /* AppDelegate.m */; };
 		82F35EFF1DD4498400BE1FEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F35EFE1DD4498400BE1FEB /* ViewController.m */; };
@@ -59,6 +61,8 @@
 		827273C11DF69401001851CE /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
 		827273C61DF696EB001851CE /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		827273C81DF69761001851CE /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		82E906971DF7CE9100BC7548 /* water-bubbles-920071_1280.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "water-bubbles-920071_1280.jpg"; sourceTree = "<group>"; };
+		82E9069B1DF7D05D00BC7548 /* Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Green.jpg; sourceTree = "<group>"; };
 		82F35EF41DD4498400BE1FEB /* BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F35EF81DD4498400BE1FEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		82F35EFA1DD4498400BE1FEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			children = (
 				827273C81DF69761001851CE /* cross@2x.png */,
 				827273C61DF696EB001851CE /* camera.png */,
+				82E906971DF7CE9100BC7548 /* water-bubbles-920071_1280.jpg */,
+				82E9069B1DF7D05D00BC7548 /* Green.jpg */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -278,11 +284,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F35F071DD4498400BE1FEB /* LaunchScreen.storyboard in Resources */,
+				82E9069C1DF7D05D00BC7548 /* Green.jpg in Resources */,
 				82F35F041DD4498400BE1FEB /* Assets.xcassets in Resources */,
 				82F35F021DD4498400BE1FEB /* Main.storyboard in Resources */,
 				82009CE11DF1621D00F014B0 /* TableViewCell1.xib in Resources */,
 				827273C71DF696EB001851CE /* camera.png in Resources */,
 				827273C91DF69761001851CE /* cross@2x.png in Resources */,
+				82E906981DF7CE9100BC7548 /* water-bubbles-920071_1280.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
