@@ -27,7 +27,9 @@
     [super viewDidLoad];
     inputArray = [NSMutableArray new];
     dataManager = [DataManager newData];
+    self.tableView.contentInset = UIEdgeInsetsMake(22,0,0,0);
 
+    
     arrayOfCellData = @[@{@"label":@"姓名"},
                         @{@"label":@"電話"},
                         @{@"label":@"市話"},
