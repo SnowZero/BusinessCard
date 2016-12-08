@@ -63,7 +63,6 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logOut];
-    
     if (error) {
         // description:顯示error原因
         NSLog(@"Process error:%@",error.description);
@@ -74,7 +73,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
         fbUid = result.token.userID;
         [self loginToMainVc];
     }
-
+    
+    
 }
 
 -(void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
